@@ -1,0 +1,36 @@
+# To view the configmap
+
+# kubectl get configmaps
+# k get cm
+
+# To describe cm
+# k describe cm <cm-name>
+# k describe cm app-config
+
+# To create cm
+#--------------1st way <easy> imperative------------
+# k create cm app-config \
+#   --from-literal=APP_COLOR=blue \
+#   --from-literal=APP_MOD=prod
+
+# this is easy but it will be difficult if we have lots of key,value pair
+
+#---------------2nd Way (using filepath)----------------
+# k create cm <cm-name> \ 
+#   --from-file=<path-to-file>
+
+# k create cm app-config \ 
+#   --from-file=app_comfig.properties
+
+#--------------3rd way declarative approch-----------
+
+apiVerson: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  APP_COLOR: blue
+  APP_MOD: prod
+
+# k apply -f <filename> 
+# as usual
