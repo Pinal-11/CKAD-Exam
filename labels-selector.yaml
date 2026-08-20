@@ -1,0 +1,19 @@
+
+
+apiVerson: v1
+kind: Pod 
+metadata: 
+  name: simple-webapp-color
+  labels:
+    name: simple-webapp-color
+    app: app1
+    tier: frontend
+spec:
+  containers:
+  - name: simple-webapp-color
+    image: python-3.1:simple-webapp-color
+    ports:
+    - containerPort: 8080
+
+
+k get pods --selector app=app1 #Commands to fetch the details
