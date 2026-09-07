@@ -1,7 +1,7 @@
 # CKAD-Exam
 
 Commands:
-* k create -f deployment-defination.yml
+* k create -f deployment-definition.yml
 * k get deploy
 * k apply -f deploy-def.yaml
 * k set image deploy <deployment-name> nginx=nginx:1.9.2
